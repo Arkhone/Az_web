@@ -33,3 +33,4 @@ class Component(ABC):
         with allure.step(f'Checking that {self.type_of} "{self.name}" has text "{text}"'):
             locator = self.get_locator(**kwargs)
             expect(locator).to_have_text(text)
+
