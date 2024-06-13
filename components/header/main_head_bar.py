@@ -24,3 +24,8 @@ class MainHeadBar:
         self.catalog_btn.click()
 
         self.catalog_bar.catalog_is_opened()
+
+    def open_basket(self):
+        self.basket_btn.should_be_visible()
+        self.basket_btn.hover()
+        self.basket_btn.click()

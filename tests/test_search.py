@@ -1,6 +1,6 @@
 import pytest
 
-from pages.playwright_home_page import PlaywrightHomePage
+from pages.home_page import HomePage
 from pages.playwright_languages_page import PlaywrightLanguagesPage
 from settings import BASE_URL
 
@@ -10,12 +10,12 @@ class TestSearch:
     def test_search(
         self,
         keyword: str,
-        playwright_home_page: PlaywrightHomePage,
+        home_page: HomePage,
         playwright_languages_page: PlaywrightLanguagesPage
     ):
-        playwright_home_page.visit(BASE_URL)
-        playwright_home_page.navbar.open_search()
-        playwright_home_page.navbar.search_modal.find_result(
+        home_page.visit(BASE_URL)
+        home_page.navbar.open_search()
+        home_page.navbar.search_modal.find_result(
             keyword, result_number=0
         )
 

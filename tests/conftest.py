@@ -1,7 +1,7 @@
 import pytest
 from playwright.sync_api import Page, sync_playwright
 
-from pages.playwright_home_page import PlaywrightHomePage
+from pages.home_page import HomePage
 from pages.playwright_languages_page import PlaywrightLanguagesPage
 
 
@@ -13,8 +13,8 @@ def chromium_page() -> Page:
 
 
 @pytest.fixture(scope='function')
-def playwright_home_page(chromium_page: Page) -> PlaywrightHomePage:
-    return PlaywrightHomePage(chromium_page)
+def home_page(chromium_page: Page) -> HomePage:
+    return HomePage(chromium_page)
 
 
 @pytest.fixture(scope='function')
